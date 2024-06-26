@@ -14,7 +14,7 @@ const HANDLER_MAPPER = {
 Deno.serve(async (request) => {
   const auth = request.headers.get("Authorization");
 
-  if (auth !== `Bearer ${Deno.env.get("NN1_DEV_API_KEY")}`) {
+  if (auth !== `Bearer ${Deno.env.get("API_KEY")}`) {
     return Response.json(
       {
         status: "error",
