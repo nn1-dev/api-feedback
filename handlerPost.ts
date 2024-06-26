@@ -1,12 +1,12 @@
-import { PREFIX } from "./constants.ts";
+// import { PREFIX } from "./constants.ts";
 
 const handlerPost = async (request: Request, kv: Deno.Kv) => {
   const body: Entry = await request.json();
 
-  await kv.set(
-    [PREFIX, body.owner, body.repo, body.pull_number],
-    body.schedule,
-  );
+  // await kv.set(
+  //   [PREFIX, body.owner, body.repo, body.pull_number],
+  //   body.schedule,
+  // );
 
   return Response.json(
     {
