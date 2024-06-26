@@ -2,8 +2,12 @@ import { PREFIX } from "./constants.ts";
 
 const handlerPost = async (request: Request, kv: Deno.Kv) => {
   const body: Entry = await request.json();
+  const timestamp = new Date().toISOString();
 
-  await kv.set([PREFIX, Date.now()], body);
+  await kv.set([PREFIX, timestamp], {
+    timestamp,
+    ...body,
+  });
 
   return Response.json(
     {

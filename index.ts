@@ -1,5 +1,5 @@
 // import { PREFIX } from "./constants.ts";
-// import handlerDelete from "./handlerDelete.ts";
+import handlerDelete from "./handlerDelete.ts";
 import handlerPost from "./handlerPost.ts";
 import handlerGet from "./handelerGet.ts";
 
@@ -8,7 +8,7 @@ const kv = await Deno.openKv();
 const HANDLER_MAPPER = {
   GET: handlerGet,
   POST: handlerPost,
-  // DELETE: handlerDelete,
+  DELETE: handlerDelete,
 };
 
 Deno.serve(async (request) => {
