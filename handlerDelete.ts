@@ -1,8 +1,8 @@
 import { PREFIX } from "./constants.ts";
 
 const handlerDelete = async (request: Request, kv: Deno.Kv) => {
-  const body: { timestamp: string } = await request.json();
-  await kv.delete([PREFIX, body.timestamp]);
+  const body: { id: string } = await request.json();
+  await kv.delete([PREFIX, body.id]);
 
   return Response.json(
     {
