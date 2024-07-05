@@ -5,7 +5,10 @@ import handlerGet from "./handelerGet.ts";
 
 const kv = await Deno.openKv();
 
-const HANDLER_MAPPER = {
+const HANDLER_MAPPER: Record<
+  string,
+  (request: Request, kv: Deno.Kv) => Promise<Response>
+> = {
   GET: handlerGet,
   POST: handlerPost,
   DELETE: handlerDelete,
@@ -26,7 +29,7 @@ Deno.serve(async (request) => {
     );
   }
 
-  return await HANDLER_MAPPER[request.method as keyof typeof HANDLER_MAPPER](
+  return await HANDLER_MAPPER[request.method](
     request,
     kv,
   );
