@@ -1,7 +1,5 @@
 // <mjml>
 //   <mj-head>
-//     <mj-preview>MJML Preview</mj-preview>
-//     <mj-title>MJML Title</mj-title>
 //     <mj-attributes>
 //       <mj-class name="nn1-text" font-size="16px" line-height="28px" color="#f8f7ff" font-family="-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol" padding="0 0 28px 0" />
 //       <mj-class name="nn1-divider" padding="0 0 28px 0" border-width="1px" border-color="#29282e" />
@@ -123,7 +121,6 @@ const generateEmailFeedback = ({
 </head>
 
 <body style="word-spacing:normal;background-color:#09080d;">
-  <div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;"> MJML Preview </div>
   <div style="background-color:#09080d;">
     <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
     <div style="margin:0px auto;max-width:600px;">
