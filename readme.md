@@ -42,7 +42,8 @@ sequenceDiagram
         Api->>Client: 400 Error
     else OK
         Api->>Client: 200 OK
-    end```
+    end
+```
 
 ## DELETE /
 
