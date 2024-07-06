@@ -1,11 +1,17 @@
 import { Resend } from "npm:resend";
 import { PREFIX } from "./constants.ts";
-import { renderEmailFeedback } from "./emails-new/feedback.tsx";
+import { renderEmailFeedback } from "./emails/feedback.tsx";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
 
 const handlerPost = async (request: Request, kv: Deno.Kv) => {
-  const body: Entry = await request.json();
+  const body: {
+    name: string;
+    stack: string;
+    who: string;
+    interval: string;
+    feedback: string;
+  } = await request.json();
   const data = {
     timestamp: new Date().toISOString(),
     ...body,

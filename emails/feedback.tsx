@@ -1,4 +1,3 @@
-import * as React from "npm:react";
 import { Html } from "npm:@react-email/html";
 import { Head } from "npm:@react-email/head";
 import { Body } from "npm:@react-email/body";
