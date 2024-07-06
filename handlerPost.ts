@@ -1,6 +1,6 @@
 import { Resend } from "npm:resend";
 import { PREFIX } from "./constants.ts";
-import generateEmailFeedback from "./emails/feedback.ts";
+import { renderEmailFeedback } from "./emails-new/feedback.tsx";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
 
@@ -13,17 +13,14 @@ const handlerPost = async (request: Request, kv: Deno.Kv) => {
 
   await kv.set([PREFIX, crypto.randomUUID()], data);
 
+  const email = renderEmailFeedback(body);
+
   const { error } = await resend.emails.send({
     from: "NN1 Dev Club <club@nn1.dev>",
     to: Deno.env.get("EMAIL_RECIPIENT")!,
     subject: "Feedback",
-    html: generateEmailFeedback({
-      name: body.name,
-      stack: body.stack,
-      who: body.who,
-      interval: body.interval,
-      feedback: body.feedback,
-    }),
+    html: email.html,
+    text: email.text,
   });
 
   if (error) {

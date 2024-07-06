@@ -1,7 +1,7 @@
 // import { PREFIX } from "./constants.ts";
 import handlerDelete from "./handlerDelete.ts";
 import handlerPost from "./handlerPost.ts";
-import handlerGet from "./handelerGet.ts";
+import handlerGet from "./handlerGet.ts";
 
 const kv = await Deno.openKv();
 
