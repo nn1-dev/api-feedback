@@ -2,7 +2,27 @@
 
 Simple API to manage feedback form submissions hosted on Deno deploy.
 
-## GET /
+## Local developement
+
+Local developement requires a few env variables:
+
+- `API_KEY` - Arbitrary string value, that needs to match `Authorization` bearer
+- `API_KEY_RESEND` - Ask Pawel, we will be happy to give it to contributors
+- `EMAIL_RECIPIENT` - Testing email address to receive notifications
+
+```
+API_KEY=XXX API_KEY_RESEND=XXX EMAIL_RECIPIENT=XXX deno run --unstable-kv --allow-env --allow-net index.ts
+```
+
+## Endpoints
+
+### GET /
+
+```
+curl --request GET \
+  --url http://localhost:8000/ \
+  --header 'Authorization: Bearer XXX'
+```
 
 ```mermaid
 sequenceDiagram
@@ -19,7 +39,21 @@ sequenceDiagram
     end
 ```
 
-## POST /
+### POST /
+
+```
+curl --request POST \
+  --url http://localhost:8000/ \
+  --header 'Authorization: Bearer XXX' \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"name": "Pablo Picasso",
+	"stack": "AWS",
+	"who": "Student",
+	"interval": "It is good.",
+	"feedback": "Some example feedback."
+}'
+```
 
 ```mermaid
 sequenceDiagram
@@ -45,7 +79,17 @@ sequenceDiagram
     end
 ```
 
-## DELETE /
+### DELETE /
+
+```
+curl --request DELETE \
+  --url http://localhost:8000/ \
+  --header 'Authorization: Bearer XXX' \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"id": "XXX"
+}'
+```
 
 ```mermaid
 sequenceDiagram
