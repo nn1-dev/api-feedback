@@ -1,6 +1,13 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "https://esm.sh/react"
+  "imports": {
+    "react": "npm:react",
+    "@react-email/render": "npm:@react-email/render",
+    "@react-email/html": "npm:@react-email/html",
+    "@react-email/head": "npm:@react-email/head",
+    "@react-email/body": "npm:@react-email/body",
+    "@react-email/container": "npm:@react-email/container",
+    "@react-email/img": "npm:@react-email/img",
+    "@react-email/text": "npm:@react-email/text",
+    "@react-email/hr": "npm:@react-email/hr"
   }
 }
