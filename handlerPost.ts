@@ -1,6 +1,6 @@
 import { Resend } from "npm:resend";
 import { PREFIX } from "./constants.ts";
-import { renderEmailFeedback } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/feedback.tsx";
+import { renderEmailFeedback } from "./emails/feedback.tsx";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
 
