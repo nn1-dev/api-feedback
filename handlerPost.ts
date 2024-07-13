@@ -1,6 +1,7 @@
 import { Resend } from "npm:resend";
 import { PREFIX } from "./constants.ts";
 import { renderEmailFeedback } from "./emails/feedback.tsx";
+import { ulid } from "https://deno.land/x/ulid/mod.ts";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
 
@@ -17,7 +18,7 @@ const handlerPost = async (request: Request, kv: Deno.Kv) => {
     ...body,
   };
 
-  await kv.set([PREFIX, crypto.randomUUID()], data);
+  await kv.set([PREFIX, ulid()], data);
 
   const email = renderEmailFeedback(body);
 
