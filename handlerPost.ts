@@ -1,7 +1,7 @@
 import { Resend } from "npm:resend";
 import { PREFIX } from "./constants.ts";
 import { renderEmailFeedback } from "./emails/feedback.tsx";
-import { ulid } from "https://deno.land/x/ulid/mod.ts";
+import { ulid } from "https://deno.land/x/ulid@v0.3.0/mod.ts";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
 
