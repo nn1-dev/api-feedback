@@ -8,7 +8,7 @@ import { Hr } from "npm:@react-email/hr";
 import { render } from "npm:@react-email/render";
 import style from "./style.tsx";
 
-interface EmailFeedbackProps {
+interface EmailAdminFeedbackProps {
   name: string;
   stack: string;
   who: string;
@@ -16,13 +16,13 @@ interface EmailFeedbackProps {
   feedback: string;
 }
 
-export const EmailFeedback = ({
+export const EmailAdminFeedback = ({
   name,
   stack,
   who,
   interval,
   feedback,
-}: EmailFeedbackProps) => (
+}: EmailAdminFeedbackProps) => (
   <Html>
     <Head />
     <Body style={style.body}>
@@ -34,7 +34,7 @@ export const EmailFeedback = ({
           alt="NN1 Dev Club Logo"
           style={style.img}
         />
-        <Text style={style.text}>We just received a new feedback.</Text>
+        <Text style={style.text}>New feedback.</Text>
         <Hr style={style.hr} />
         {name !== "" && (
           <Text style={style.text}>
@@ -57,26 +57,24 @@ export const EmailFeedback = ({
             <strong>Feedback:</strong> {feedback}
           </Text>
         )}
-        <Hr style={style.hr} />
-        <Text style={style.text}>Have a good day 👋</Text>
       </Container>
     </Body>
   </Html>
 );
 
-EmailFeedback.PreviewProps = {
+EmailAdminFeedback.PreviewProps = {
   name: "Pablo Picasso",
   stack: "AWS, Rust, JavaScript",
   who: "Pro",
   interval: "Every 3 months is fine",
   feedback:
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-} as EmailFeedbackProps;
+} as EmailAdminFeedbackProps;
 
-const renderEmailFeedback = (props: EmailFeedbackProps) => ({
-  html: render(<EmailFeedback {...props} />),
-  text: render(<EmailFeedback {...props} />, { plainText: true }),
+const renderEmailFeedback = (props: EmailAdminFeedbackProps) => ({
+  html: render(<EmailAdminFeedback {...props} />),
+  text: render(<EmailAdminFeedback {...props} />, { plainText: true }),
 });
 
-export default EmailFeedback;
+export default EmailAdminFeedback;
 export { renderEmailFeedback };
