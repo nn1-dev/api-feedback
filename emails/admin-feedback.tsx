@@ -26,7 +26,7 @@ export const EmailAdminFeedback = ({
   <Html>
     <Head />
     <Body style={style.body}>
-      <Container>
+      <Container style={style.container}>
         <Img
           src="https://nn1.dev/logo-email.png"
           width="119"
@@ -34,7 +34,7 @@ export const EmailAdminFeedback = ({
           alt="NN1 Dev Club Logo"
           style={style.img}
         />
-        <Text style={style.text}>New feedback.</Text>
+        <Text style={style.text}>New feedback ✨</Text>
         <Hr style={style.hr} />
         {name !== "" && (
           <Text style={style.text}>
