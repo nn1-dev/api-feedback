@@ -1,16 +1,23 @@
 import { PREFIX } from "./constants.ts";
 
 const handlerGet = async (_request: Request, kv: Deno.Kv) => {
-  const entries = kv.list<string>({
+  const entriesIterator = kv.list<{
+    timestamp: string;
+    name: string;
+    stack: string;
+    who: string;
+    interval: string;
+    feedback: string;
+  }>({
     prefix: [PREFIX],
   });
-  const response = await Array.fromAsync(entries);
+  const entries = await Array.fromAsync(entriesIterator);
 
   return Response.json(
     {
       status: "success",
       statusCode: 200,
-      data: response,
+      data: entries,
       error: null,
     },
     { status: 200 },
