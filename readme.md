@@ -61,7 +61,7 @@ sequenceDiagram
     participant Api
     participant Db as KV Database
     participant Resend
-    Client->>Api: GET /
+    Client->>Api: POST /
     Api->>Db: kv.set()
     Db->>Api: Entry
     Api->>Resend: resend.emails.send()
@@ -96,7 +96,7 @@ sequenceDiagram
     participant Client
     participant Api
     participant Db as KV Database
-    Client->>Api: GET /
+    Client->>Api: DELETE /
     Api->>Db: kv.delete()
     Db->>Api: Entry
     alt Unauthorized
