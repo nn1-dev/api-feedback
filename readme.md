@@ -83,12 +83,8 @@ sequenceDiagram
 
 ```
 curl --request DELETE \
-  --url http://localhost:8000/ \
+  --url http://localhost:8000/:feedbackId \
   --header 'Authorization: Bearer XXX' \
-  --header 'Content-Type: application/json' \
-  --data '{
-	"id": "XXX"
-}'
 ```
 
 ```mermaid
