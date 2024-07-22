@@ -24,7 +24,7 @@ const handlerPost = async (request: Request, kv: Deno.Kv) => {
 
   const { error } = await resend.emails.send({
     from: "NN1 Dev Club <club@nn1.dev>",
-    to: Deno.env.get("EMAIL_RECIPIENT")!,
+    to: Deno.env.get("ADMIN_RECIPIENTS")?.split(",")!,
     subject: "✨ New feedback",
     html: email.html,
     text: email.text,
