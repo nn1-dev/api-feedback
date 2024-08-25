@@ -480,11 +480,14 @@
   "workspace": {
     "dependencies": [
       "npm:@react-email/body",
+      "npm:@react-email/button",
       "npm:@react-email/container",
       "npm:@react-email/head",
+      "npm:@react-email/heading",
       "npm:@react-email/hr",
       "npm:@react-email/html",
       "npm:@react-email/img",
+      "npm:@react-email/link",
       "npm:@react-email/render",
       "npm:@react-email/text",
       "npm:react"
