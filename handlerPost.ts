@@ -20,7 +20,7 @@ const handlerPost = async (request: Request, kv: Deno.Kv) => {
 
   await kv.set([PREFIX, ulid()], data);
 
-  const email = renderEmailAdminFeedback(body);
+  const email = await renderEmailAdminFeedback(body);
 
   const { error } = await resend.emails.send({
     from: "NN1 Dev Club <club@nn1.dev>",
