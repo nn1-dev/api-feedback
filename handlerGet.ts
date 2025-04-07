@@ -4,9 +4,6 @@ const handlerGet = async (_request: Request, kv: Deno.Kv) => {
   const entriesIterator = kv.list<{
     timestamp: string;
     name: string;
-    stack: string;
-    who: string;
-    interval: string;
     feedback: string;
   }>({
     prefix: [PREFIX],

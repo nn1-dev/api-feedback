@@ -7,11 +7,8 @@ const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
 
 const handlerPost = async (request: Request, kv: Deno.Kv) => {
   const body: {
-    name?: string;
-    stack?: string;
-    who: string;
-    interval: string;
-    feedback?: string;
+    name: string;
+    feedback: string;
   } = await request.json();
   const data = {
     timestamp: new Date().toISOString(),
